@@ -1,0 +1,21 @@
+.login {
+    width: 100%;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    > form {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 40px;
+        border-radius: 15px;
+        > .avatar {
+            display: flex;
+            align-items: center;
+            img {
+                margin-right: 20px;
+                width: 100px;
+                height: 100px;
+            }
+            margin-bottom: 40px;
+        }
+    }
+}
