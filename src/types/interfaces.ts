@@ -12,15 +12,18 @@ export interface InputInputs {
     value: any
 }
 
-export interface TextInput {
+export interface inputs {
     placeholder: string
     title: string;
     handleOnChange: any;
     value: any;
 }
 
-export interface EmailInputs extends TextInput {}
-export interface PasswordInputs extends TextInput {}
+export interface EmailInputs extends inputs {}
+export interface PasswordInputs extends inputs {}
+export interface TextInputs extends inputs {
+    maxLength: number;
+}
 export interface SubmitInputs {
     value: string;
 }
