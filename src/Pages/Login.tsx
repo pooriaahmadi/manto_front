@@ -1,7 +1,9 @@
 import "../assets/scss/login/login.scss"
 import guestImage from "../assets/images/guest.png";
 import { ChangeEvent, useState } from "react";
-import CustomInput from "../Components/Inputs/CustomInput";
+import PasswordInput from "../Components/Inputs/PasswordInput";
+import EmailInput from "../Components/Inputs/EmailInput";
+import SubmitInput from "../Components/Inputs/SubmitInput";
 
 const Login = () => {
     const [email, setEmail] = useState<string>("");
@@ -20,8 +22,9 @@ const Login = () => {
                 <h1>Welcome Back!</h1>
             </div>
             <div className="inputs">
-                <CustomInput placeholder="ex. uwu@uwu.com" value={email} type="email" title="Email" handleOnChange={handleEmailChange} />
-                <CustomInput placeholder="ex. helluwu world" value={password} type="password" title="Password" handleOnChange={handleEmailChange} />
+                <EmailInput placeholder="ex. uwu@uwu.com" value={email} title="Email" handleOnChange={handleEmailChange} />
+                <PasswordInput placeholder="ex. helluwu world" value={password} title="Password" handleOnChange={handlePasswordChange} />
+                <SubmitInput value="Login" />
             </div>
         </form>
     </div>
