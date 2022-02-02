@@ -1,4 +1,60 @@
 .home {
     width: 100%;
-    
+    .top {
+        width: 100%;
+        background-position: center;
+        background-repeat: repeat;
+        >.inner {
+            display: flex;
+            justify-content: center;
+            padding: 100px 0;
+            backdrop-filter: blur(4px);
+            background-color: rgba(0, 0, 0, 0.1);
+            .left {
+                margin-right: 40px;
+                img {
+                    width: 150px;
+                }
+            }
+            .right {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                >h1 {
+                    margin-bottom: 20px;
+                    span {
+                        color: white;
+                    }
+                }
+                >p {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: rgba(0, 0, 0, 0.8);
+                    span {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    .annoying {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0;
+        >p {
+            font-size: 20px;
+            margin-right: 20px;
+        }
+        a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #007AFF;
+            margin-right: 15px;
+            border-radius: 5px;
+            font-weight: bolder;
+        }
+    }
 }
