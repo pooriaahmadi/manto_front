@@ -23,17 +23,12 @@
                 flex-direction: column;
                 >h1 {
                     margin-bottom: 20px;
-                    span {
-                        color: white;
-                    }
+                    color: white;
                 }
                 >p {
                     font-size: 18px;
                     font-weight: bold;
-                    color: rgba(0, 0, 0, 0.8);
-                    span {
-                        color: white;
-                    }
+                    color: white
                 }
             }
         }
