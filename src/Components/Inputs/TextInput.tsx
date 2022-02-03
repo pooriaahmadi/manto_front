@@ -1,14 +1,14 @@
 import "../../assets/scss/inputs/input.scss";
 import { TextInputs } from "../../types/interfaces";
-import "../../assets/scss/inputs/input.scss"
-
+import "../../assets/scss/inputs/input.scss";
 
 const TextInput = ({
   handleOnChange,
   placeholder,
   title,
   value,
-  maxLength
+  maxLength,
+  required = false,
 }: TextInputs) => {
   return (
     <div className="input">
@@ -19,6 +19,7 @@ const TextInput = ({
         value={value}
         onChange={handleOnChange}
         maxLength={maxLength}
+        required={required}
       />
     </div>
   );

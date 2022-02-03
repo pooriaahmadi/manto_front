@@ -19,6 +19,8 @@ export interface inputs {
   title: string;
   handleOnChange: any;
   value: any;
+  error?: boolean;
+  required?: boolean;
 }
 
 export interface EmailInputs extends inputs {}
@@ -30,7 +32,7 @@ export interface SubmitInputs {
   value: string;
 }
 export interface UserInputs {
-    endpoint: string
+  endpoint: string;
   id?: number;
   username?: string;
   email?: string;
@@ -43,6 +45,16 @@ export interface UserInputs {
   updatedAt?: Date;
 }
 export interface LoginInputs {
-  user: User,
-  setUser: any
+  user: User;
+  setUser: any;
+  message?: string;
+  update: boolean;
+  setUpdate: any;
+}
+export interface HeaderInputs {
+  user: User;
+}
+export interface RegisterInputs extends LoginInputs {}
+export interface ErrorInputs {
+  content: string;
 }
