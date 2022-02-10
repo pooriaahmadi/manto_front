@@ -10,7 +10,11 @@ const HeaderMenu = (props: HeaderInputs) => {
   return (
     <div className="menu">
       <HeaderItem content="Home" link="/" />
-      {!props.user.loggedIn && (
+      {props.user.loggedIn ? (
+        <>
+          <HeaderItem content="Teams" link="/teams" />
+        </>
+      ) : (
         <>
           <HeaderItem content="Login" link="/login" />
           <HeaderItem content="Register" link="/register" />
