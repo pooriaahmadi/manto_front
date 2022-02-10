@@ -1,3 +1,4 @@
+import Team from "../Classes/Team";
 import User from "../Classes/User";
 
 export interface HeaderItemInputs {
@@ -57,4 +58,17 @@ export interface HeaderInputs {
 export interface RegisterInputs extends LoginInputs {}
 export interface ErrorInputs {
   content: string;
+}
+export interface TeamInputs {
+  id: number;
+  name: string;
+  description?: string;
+  avatar?: string;
+}
+export interface ManageTeamInputs {
+  team: Team;
+}
+export interface CommentBoxInputs {
+  hintName: string;
+  hintColor: string;
 }
