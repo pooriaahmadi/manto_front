@@ -64,11 +64,15 @@ export interface TeamInputs {
   name: string;
   description?: string;
   avatar?: string;
+  user: User;
 }
 export interface ManageTeamInputs {
-  team: Team;
+  user: User;
 }
 export interface CommentBoxInputs {
   hintName: string;
   hintColor: string;
+}
+export interface TeamComponentInputs {
+  user: User;
 }

@@ -60,10 +60,7 @@ function App() {
             />
           }
         />
-        <Route
-          path="/teams/:id/manage"
-          element={<ManageTeam team={new Team({ id: 1, name: "team 3161" })} />}
-        />
+        <Route path="/teams/:id/manage" element={<ManageTeam user={user} />} />
       </Routes>
     </BrowserRouter>
   );
