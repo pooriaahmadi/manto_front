@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import "./assets/scss/style.scss";
 import ManageTeam from "./Pages/ManageTeam";
 import Team from "./Classes/Team";
+import Teams from "./Pages/Teams";
 function App() {
   const [update, setUpdate] = useState<boolean>(false);
   const [user, setUser] = useState<User>(
@@ -60,6 +61,7 @@ function App() {
             />
           }
         />
+        <Route path="/teams" element={<Teams user={user} />} />
         <Route path="/teams/:id/manage" element={<ManageTeam user={user} />} />
       </Routes>
     </BrowserRouter>

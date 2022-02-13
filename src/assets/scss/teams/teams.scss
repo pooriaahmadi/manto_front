@@ -1,0 +1,10 @@
+.teams {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .team {
+        width: calc(100% / 3 - 150px / 3);
+    }
+}

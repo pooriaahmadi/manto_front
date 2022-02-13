@@ -19,22 +19,14 @@ const ManageTeam = ({ user }: ManageTeamInputs) => {
         return;
       }
       const team = await response.json();
-      const author = team.members.filter(
-        (item: any) => item.permissions & 16
-      )[0].user;
+      const owners = team.members
+        .filter((item: any) => item.permissions & 16)
+        .map((item: any) => item.user);
       setTeam(
         new Team({
           id: team.id,
           name: team.name,
-          user: new User({
-            endpoint: user.endpoint,
-            createdAt: author.createdAt,
-            id: author.id,
-            permissions: author.permissions,
-            preferredName: author.preferredName,
-            updatedAt: author.updatedAt,
-            username: author.username,
-          }),
+          owners: owners,
         })
       );
     };

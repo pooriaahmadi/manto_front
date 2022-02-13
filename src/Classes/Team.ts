@@ -1,4 +1,4 @@
-import { TeamInputs } from "../types/interfaces";
+import { TeamClassInputs, TeamInputs } from "../types/interfaces";
 import User from "./User";
 
 class Team {
@@ -6,13 +6,13 @@ class Team {
   name: string;
   description?: string;
   avatar?: string;
-  user: User;
-  constructor({ id, name, avatar, description, user }: TeamInputs) {
+  owners: User[];
+  constructor({ id, name, avatar, description, owners }: TeamClassInputs) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.avatar = avatar;
-    this.user = user;
+    this.owners = owners;
   }
 }
 

@@ -64,7 +64,15 @@ export interface TeamInputs {
   name: string;
   description?: string;
   avatar?: string;
-  user: User;
+  owners: User[];
+  currentUser: User;
+}
+export interface TeamClassInputs {
+  id: number;
+  name: string;
+  description?: string;
+  avatar?: string;
+  owners: User[];
 }
 export interface ManageTeamInputs {
   user: User;
