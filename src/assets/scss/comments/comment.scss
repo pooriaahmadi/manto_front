@@ -1,0 +1,16 @@
+.comment {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: 0.5s;
+    &:hover {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        transition: 0.5s;
+    }
+    h1 {
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+}

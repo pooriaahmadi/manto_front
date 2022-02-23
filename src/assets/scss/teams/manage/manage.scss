@@ -26,7 +26,7 @@
             font-size: 35px;
         }
     }
-    .comments {
+    >.comments {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -34,6 +34,7 @@
         >.comment-box {
             width: calc(100% / 3 - 200px / 3);
             height: 300px;
+            max-height: 300px;
         }
     }
 }

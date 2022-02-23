@@ -80,7 +80,19 @@ export interface ManageTeamInputs {
 export interface CommentBoxInputs {
   hintName: string;
   hintColor: string;
+  comments: any[];
+  setComments: any;
+  user: User;
 }
 export interface TeamComponentInputs {
   user: User;
+}
+export interface CommentInputs {
+  id: number;
+  author: User;
+  title: string;
+  content: string;
+  team?: Team;
+  user?: User;
+  handleDeleteComment: any;
 }

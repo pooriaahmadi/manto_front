@@ -61,7 +61,7 @@ const Login = ({ user, setUser, update, setUpdate }: LoginInputs) => {
     }
   };
   if (user.loggedIn) {
-    return <Navigate to="/" />;
+    return <Navigate to="/teams" />;
   }
   return (
     <div className="login">

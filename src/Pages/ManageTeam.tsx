@@ -5,15 +5,15 @@ import "../assets/scss/teams/manage/manage.scss";
 import Team from "../Classes/Team";
 import { ManageTeamInputs } from "../types/interfaces";
 import NotFound from "./NotFound";
-import User from "../Classes/User";
 
 const ManageTeam = ({ user }: ManageTeamInputs) => {
   const [team, setTeam] = useState<Team>();
   const [notFound, setNotFound] = useState<boolean>(false);
+  const [comments, setComments] = useState<any[]>([]);
   const { id } = useParams();
   useEffect(() => {
     const stuff = async () => {
-      const response = await fetch(user.endpoint + "/teams/" + id + "/members");
+      let response = await fetch(user.endpoint + "/teams/" + id + "/members");
       if (response.status == 404) {
         setNotFound(true);
         return;
@@ -29,6 +29,13 @@ const ManageTeam = ({ user }: ManageTeamInputs) => {
           owners: owners,
         })
       );
+      response = await fetch(`${user.endpoint}/comments/teams/${team.id}`, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      const comments = (await response.json()).comments;
+      setComments(comments);
     };
     stuff();
   }, []);
@@ -51,9 +58,27 @@ const ManageTeam = ({ user }: ManageTeamInputs) => {
         <h1>{team.name}</h1>
       </div>
       <div className="comments">
-        <CommentBox hintName="neutral" hintColor="#A9A8A8" />
-        <CommentBox hintName="negative" hintColor="#EF7650" />
-        <CommentBox hintName="positive" hintColor="#66EF50" />
+        <CommentBox
+          hintName="neutral"
+          hintColor="#A9A8A8"
+          comments={comments.filter((item: any) => item.mode === 0)}
+          user={user}
+          setComments={setComments}
+        />
+        <CommentBox
+          hintName="negative"
+          hintColor="#EF7650"
+          comments={comments.filter((item: any) => item.mode === 1)}
+          user={user}
+          setComments={setComments}
+        />
+        <CommentBox
+          hintName="positive"
+          hintColor="#66EF50"
+          comments={comments.filter((item: any) => item.mode === 2)}
+          user={user}
+          setComments={setComments}
+        />
       </div>
     </div>
   );
