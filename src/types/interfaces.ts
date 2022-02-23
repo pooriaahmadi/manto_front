@@ -96,3 +96,11 @@ export interface CommentInputs {
   user?: User;
   handleDeleteComment: any;
 }
+export interface NewCommentInputs {
+  comments: any[];
+  setComments: any;
+  currentUser: User;
+  mode: number;
+  user?: User;
+  team?: Team;
+}
