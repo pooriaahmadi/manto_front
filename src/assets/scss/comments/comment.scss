@@ -9,8 +9,17 @@
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         transition: 0.5s;
     }
-    h1 {
-        margin-bottom: 10px;
-        font-size: 25px;
+    .top {
+        margin-bottom: 0 !important;
+        display: flex;
+        justify-content: space-between !important;
+        align-items: center !important;
+        h1 {
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+        img {
+            width: 20px;
+        }
     }
 }
