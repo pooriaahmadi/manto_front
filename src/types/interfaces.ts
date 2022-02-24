@@ -25,6 +25,9 @@ export interface inputs {
 }
 
 export interface EmailInputs extends inputs {}
+export interface SelectInputs extends inputs {
+  options: string[];
+}
 export interface PasswordInputs extends inputs {}
 export interface TextInputs extends inputs {
   maxLength: number;
@@ -97,10 +100,11 @@ export interface CommentInputs {
   handleDeleteComment: any;
 }
 export interface NewCommentInputs {
-  comments: any[];
-  setComments: any;
   currentUser: User;
-  mode: number;
-  user?: User;
-  team?: Team;
+}
+export interface NewTeamCommentInputs extends NewCommentInputs {
+  team: Team;
+}
+export interface TeamCommentInputs {
+  user: User;
 }

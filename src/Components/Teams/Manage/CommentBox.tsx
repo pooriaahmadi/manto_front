@@ -1,6 +1,8 @@
 import "../../../assets/scss/teams/manage/commentbox.scss";
 import { CommentBoxInputs } from "../../../types/interfaces";
 import Comment from "../../Comment/Comment";
+import { useNavigate } from "react-router-dom";
+import NewComment from "../../Comment/NewTeamComment";
 const CommentBox = ({
   hintColor,
   hintName,
@@ -8,9 +10,17 @@ const CommentBox = ({
   user,
   setComments,
 }: CommentBoxInputs) => {
+  const navigate = useNavigate();
+  const handleHintClick = () => {
+    navigate(`/teams/comments/new`);
+  };
   return (
     <div className="comment-box">
-      <div className="hint" style={{ backgroundColor: hintColor }}>
+      <div
+        className="hint"
+        style={{ backgroundColor: hintColor, cursor: "pointer" }}
+        onClick={handleHintClick}
+      >
         <h5>{hintName}</h5>
         <button>+</button>
       </div>

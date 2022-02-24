@@ -7,7 +7,7 @@ import User from "./Classes/User";
 import { useState, useEffect } from "react";
 import "./assets/scss/style.scss";
 import ManageTeam from "./Pages/ManageTeam";
-import Team from "./Classes/Team";
+import NewComment from "./Components/Comment/NewTeamComment";
 import Teams from "./Pages/Teams";
 function App() {
   const [update, setUpdate] = useState<boolean>(false);
@@ -63,6 +63,7 @@ function App() {
         />
         <Route path="/teams" element={<Teams user={user} />} />
         <Route path="/teams/:id/manage" element={<ManageTeam user={user} />} />
+        <Route path="/teams/:id/comments/new" element={<NewComment  />}
       </Routes>
     </BrowserRouter>
   );
