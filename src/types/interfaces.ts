@@ -16,7 +16,6 @@ export interface InputInputs {
 }
 
 export interface inputs {
-  placeholder: string;
   title: string;
   handleOnChange: any;
   value: any;
@@ -24,12 +23,17 @@ export interface inputs {
   required?: boolean;
 }
 
-export interface EmailInputs extends inputs {}
+export interface EmailInputs extends inputs {
+  placeholder: string;
+}
 export interface SelectInputs extends inputs {
   options: string[];
 }
-export interface PasswordInputs extends inputs {}
+export interface PasswordInputs extends inputs {
+  placeholder: string;
+}
 export interface TextInputs extends inputs {
+  placeholder: string;
   maxLength: number;
 }
 export interface SubmitInputs {
@@ -86,6 +90,7 @@ export interface CommentBoxInputs {
   comments: any[];
   setComments: any;
   user: User;
+  handleHintClick: any;
 }
 export interface TeamComponentInputs {
   user: User;

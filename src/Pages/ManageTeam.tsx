@@ -1,5 +1,5 @@
 import CommentBox from "../Components/Teams/Manage/CommentBox";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../assets/scss/teams/manage/manage.scss";
 import Team from "../Classes/Team";
@@ -10,7 +10,9 @@ const ManageTeam = ({ user }: ManageTeamInputs) => {
   const [team, setTeam] = useState<Team>();
   const [notFound, setNotFound] = useState<boolean>(false);
   const [comments, setComments] = useState<any[]>([]);
+  const navigate = useNavigate();
   const { id } = useParams();
+
   useEffect(() => {
     const stuff = async () => {
       let response = await fetch(user.endpoint + "/teams/" + id + "/members");
@@ -45,6 +47,9 @@ const ManageTeam = ({ user }: ManageTeamInputs) => {
   if (!team) {
     return <></>;
   }
+  const handleHintClick = () => {
+    navigate(`/teams/${team.id}/comments/new`);
+  };
   return (
     <div className="team-manage">
       <div className="top">
@@ -64,6 +69,7 @@ const ManageTeam = ({ user }: ManageTeamInputs) => {
           comments={comments.filter((item: any) => item.mode === 0)}
           user={user}
           setComments={setComments}
+          handleHintClick={handleHintClick}
         />
         <CommentBox
           hintName="negative"
@@ -71,6 +77,7 @@ const ManageTeam = ({ user }: ManageTeamInputs) => {
           comments={comments.filter((item: any) => item.mode === 1)}
           user={user}
           setComments={setComments}
+          handleHintClick={handleHintClick}
         />
         <CommentBox
           hintName="positive"
@@ -78,6 +85,7 @@ const ManageTeam = ({ user }: ManageTeamInputs) => {
           comments={comments.filter((item: any) => item.mode === 2)}
           user={user}
           setComments={setComments}
+          handleHintClick={handleHintClick}
         />
       </div>
     </div>

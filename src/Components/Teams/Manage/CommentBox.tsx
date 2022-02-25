@@ -9,11 +9,8 @@ const CommentBox = ({
   comments,
   user,
   setComments,
+  handleHintClick,
 }: CommentBoxInputs) => {
-  const navigate = useNavigate();
-  const handleHintClick = () => {
-    navigate(`/teams/comments/new`);
-  };
   return (
     <div className="comment-box">
       <div

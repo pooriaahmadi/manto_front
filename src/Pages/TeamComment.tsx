@@ -17,7 +17,7 @@ const TeamComment = ({ user }: TeamCommentInputs) => {
       setTeam(data);
     };
     stuff();
-  });
+  }, []);
 
   return <NewTeamComment currentUser={user} team={team} />;
 };

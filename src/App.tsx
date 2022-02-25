@@ -9,6 +9,7 @@ import "./assets/scss/style.scss";
 import ManageTeam from "./Pages/ManageTeam";
 import NewComment from "./Components/Comment/NewTeamComment";
 import Teams from "./Pages/Teams";
+import TeamComment from "./Pages/TeamComment";
 function App() {
   const [update, setUpdate] = useState<boolean>(false);
   const [user, setUser] = useState<User>(
@@ -63,7 +64,10 @@ function App() {
         />
         <Route path="/teams" element={<Teams user={user} />} />
         <Route path="/teams/:id/manage" element={<ManageTeam user={user} />} />
-        <Route path="/teams/:id/comments/new" element={<NewComment  />}
+        <Route
+          path="/teams/:id/comments/new"
+          element={<TeamComment user={user} />}
+        />
       </Routes>
     </BrowserRouter>
   );

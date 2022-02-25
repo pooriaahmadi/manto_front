@@ -1,6 +1,5 @@
 import "../../assets/scss/inputs/input.scss";
-import { EmailInputs, SelectInputs } from "../../types/interfaces";
-import "../../assets/scss/inputs/input.scss";
+import { SelectInputs } from "../../types/interfaces";
 
 const SelectInput = ({
   handleOnChange,
@@ -13,10 +12,11 @@ const SelectInput = ({
   return (
     <div className={"input" + (error ? " error" : "")}>
       <h2>{title}</h2>
-      <input value={value} onChange={handleOnChange} required={required} />
-      <select required={required} onc>
+      <select required={required} onChange={handleOnChange} value={value}>
         {options.map((item, index) => (
-          <option value={index}>item</option>
+          <option key={index} value={index}>
+            {item}
+          </option>
         ))}
       </select>
     </div>

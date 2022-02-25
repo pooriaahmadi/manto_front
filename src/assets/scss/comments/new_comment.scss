@@ -1,0 +1,13 @@
+.new_comment_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .new_comment {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 40px;
+        border-radius: 15px;
+        h1 {
+            margin-bottom: 40px;
+        }
+    }
+}
