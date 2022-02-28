@@ -113,3 +113,29 @@ export interface NewTeamCommentInputs extends NewCommentInputs {
 export interface TeamCommentInputs {
   user: User;
 }
+export interface MatchesInputs {
+  user: User;
+  teamId: number;
+}
+export interface teamJSON {
+  id: number;
+  name: string;
+  description: string;
+  avatar: string;
+}
+export interface MatchInputs {
+  id: number;
+  handleDelete: any;
+}
+export interface MatchViewInputs {
+  user: User;
+}
+export interface CategoriesInputs {
+  user: User;
+  match_id: any;
+}
+export interface CategoryInputs {
+  id: number;
+  title: string;
+  properties: any[];
+}

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import "../assets/scss/teams/manage/manage.scss";
 import Team from "../Classes/Team";
 import { ManageTeamInputs } from "../types/interfaces";
+import Matches from "../Components/Teams/Matches";
 import NotFound from "./NotFound";
 
 const ManageTeam = ({ user }: ManageTeamInputs) => {
@@ -88,6 +89,7 @@ const ManageTeam = ({ user }: ManageTeamInputs) => {
           handleHintClick={handleHintClick}
         />
       </div>
+      <Matches teamId={team.id} user={user} />
     </div>
   );
 };
