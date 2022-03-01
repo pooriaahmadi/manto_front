@@ -22,7 +22,7 @@ const MatchView = ({ user }: MatchViewInputs) => {
       setMatch(data);
     };
     stuff();
-  }, [user.endpoint, user.token]);
+  }, []);
   const handleDelete = async () => {
     const response = await fetch(`${user.endpoint}/matches/${id}`, {
       headers: {

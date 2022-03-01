@@ -1,3 +1,4 @@
+import { NamedTupleMember } from "typescript";
 import Team from "../Classes/Team";
 import User from "../Classes/User";
 
@@ -137,5 +138,27 @@ export interface CategoriesInputs {
 export interface CategoryInputs {
   id: number;
   title: string;
-  properties: any[];
+  user: User;
+  match_id: number;
+}
+export enum PropertyTypes {
+  boolean = 0,
+  string = 1,
+  number = 3,
+}
+export interface PropertyInputs {
+  id: number;
+  title: string;
+  type: PropertyTypes;
+  user: User;
+  match_id: number;
+}
+export interface PropertiesInputs {
+  category_id: number;
+  user: User;
+  match_id: number;
+}
+export interface AnswerInputs {
+  type: PropertyTypes;
+  answer: any;
 }
