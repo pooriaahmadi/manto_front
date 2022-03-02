@@ -8,7 +8,7 @@ const HeaderMenu = (props: HeaderInputs) => {
     setUpdate(!update);
   }, [props.user]);
   return (
-    <div className="menu">
+    <>
       <HeaderItem content="Home" link="/" />
       {props.user.loggedIn ? (
         <>
@@ -21,7 +21,7 @@ const HeaderMenu = (props: HeaderInputs) => {
         </>
       )}
       <HeaderItem content="About us" link="#" />
-    </div>
+    </>
   );
 };
 

@@ -34,6 +34,60 @@ header {
     >.right {
         img {
             width: 70px;
+            &#logo {
+                display: flex;
+            }
+            &#menuicon {
+                display: none;
+                width: 50px;
+            }
+        }
+        .menu {
+            padding: 20px;
+            z-index: 10000000;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            transition: 0.5s;
+            top: -100%;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            .top {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                img {
+                    width: 40px;
+                }
+            }
+            .bottom {
+                width: 100%;
+                flex-direction: column;
+                a {
+                    border-radius: 10px;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    margin-bottom: 15px;
+                    text-decoration: none;
+                    width: 100%;
+                    padding: 10px;
+                    color: black;
+                    font-weight: bold;
+                    font-size: 20px;
+                    display: flex;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &.active {
+                top: 0;
+                transition: 0.5s;
+            }
         }
     }
 }

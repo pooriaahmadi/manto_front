@@ -1,4 +1,10 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import {
+  ChangeEvent,
+  ChangeEventHandler,
+  FormEvent,
+  useEffect,
+  useState,
+} from "react";
 import { PropertyInputs } from "../../types/interfaces";
 import "../../assets/scss/properties/property.scss";
 import "../../assets/scss/inputs/input.scss";
@@ -10,8 +16,8 @@ function strToBool(s: string) {
 const Property = ({ id, title, type, user, match_id }: PropertyInputs) => {
   const [value, setValue] = useState<any>();
   const [answer, setAnswer] = useState<any>();
-  const default_values = [0, 0, "default text"];
-  const types = ["number", "checkbox", "text"];
+  const default_values = [0, 0, "default text", title.split(",")[1]];
+  const types = ["number", "checkbox", "text", "select"];
   useEffect(() => {
     const stuff = async () => {
       const response = await fetch(
@@ -51,6 +57,10 @@ const Property = ({ id, title, type, user, match_id }: PropertyInputs) => {
     }
     await save(e.target.value);
   };
+  const handleSelectValueChange = async (e: ChangeEvent<HTMLSelectElement>) => {
+    setValue(e.target.value);
+    await save(e.target.value);
+  };
   const save = async (value: any) => {
     const response = await fetch(`${user.endpoint}/answers/${answer.id}`, {
       headers: {
@@ -70,13 +80,26 @@ const Property = ({ id, title, type, user, match_id }: PropertyInputs) => {
   };
   return (
     <form onSubmit={handleSave} className="property">
-      <h1>{title}</h1>
-      <input
-        type={types[type]}
-        value={value}
-        checked={types[type] === "checkbox" ? strToBool(value) : false}
-        onChange={handleValueChange}
-      />
+      <h1>{type === 3 ? title.split(",")[0] : title}</h1>
+      {type === 3 ? (
+        <select onChange={handleSelectValueChange} value={value}>
+          {title
+            .split(",")
+            .filter((item, index) => index !== 0)
+            .map((item, index) => (
+              <option value={item} key={index}>
+                {item}
+              </option>
+            ))}
+        </select>
+      ) : (
+        <input
+          type={types[type]}
+          value={value}
+          checked={types[type] === "checkbox" ? strToBool(value) : false}
+          onChange={handleValueChange}
+        />
+      )}
     </form>
   );
 };

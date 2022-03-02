@@ -25,3 +25,62 @@ body {
 ::-webkit-scrollbar-thumb {
     background-color: #007AFF;
 }
+
+@media screen and (max-width: 800px) {
+    header {
+        .left {
+            .menu {
+                display: none !important;
+            }
+        }
+        .right {
+            #menuicon {
+                display: flex !important;
+            }
+            #logo {
+                display: none !important;
+            }
+        }
+    }
+    .home {
+        .top {
+            .inner {
+                padding: 50px 0 !important;
+                flex-direction: column;
+                .left {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: unset !important;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .annoying {
+            padding: 30px 10px;
+            a {
+                &:last-of-type {
+                    margin-right: unset !important;
+                }
+            }
+        }
+    }
+    .teams {
+        .team {
+            width: 100% !important;
+            margin-bottom: 20px;
+        }
+    }
+    .comments {
+        flex-wrap: wrap;
+        .comment-box {
+            width: 100% !important;
+            margin-bottom: 20px;
+        }
+    }
+    .categories {
+        .category {
+            width: 100%;
+        }
+    }
+}
