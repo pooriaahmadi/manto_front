@@ -11,7 +11,7 @@
             outline: none;
             border: none;
             background-color: transparent;
-            font-weight: bolder;
+            font-weight: bolder !important;
             font-size: 15px;
             background-color: limegreen;
             color: white;
@@ -49,13 +49,13 @@
             padding: 10px 15px;
             border-radius: 8px;
             margin-right: 15px;
-            font-weight: bolder;
+            font-weight: bolder !important;
         }
         button {
             outline: none;
             border: none;
             background-color: transparent;
-            font-weight: bolder;
+            font-weight: bolder !important;
             font-size: 15px;
             background-color: crimson;
             color: white;

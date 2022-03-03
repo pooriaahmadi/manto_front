@@ -44,7 +44,7 @@
     }
     >p {
         font-size: 20px;
-        font-weight: bolder;
+        font-weight: bolder !important;
         margin-bottom: 20px;
     }
     .buttons {
@@ -59,7 +59,7 @@
             width: 49%;
             text-decoration: none;
             color: white;
-            font-weight: bolder;
+            font-weight: bolder !important;
             background-color: #007AFF;
             border-radius: 10px;
             font-size: 20px;

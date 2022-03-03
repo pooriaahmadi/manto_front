@@ -27,7 +27,7 @@
                 }
                 >p {
                     font-size: 18px;
-                    font-weight: bold;
+                    font-weight: bold !important;
                     color: white
                 }
             }
@@ -49,7 +49,7 @@
             background-color: #007AFF;
             margin-right: 15px;
             border-radius: 5px;
-            font-weight: bolder;
+            font-weight: bolder !important;
         }
     }
 }

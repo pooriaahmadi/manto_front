@@ -16,7 +16,7 @@ header {
                 text-decoration: none;
                 color: rgba($color: #000000, $alpha: 0.7);
                 font-size: 20px;
-                font-weight: bold;
+                font-weight: bold !important;
                 padding: 10px 20px;
                 transition: 0.5s;
                 border-radius: 10px;
@@ -49,7 +49,7 @@ header {
             width: 100vw;
             height: 100vh;
             transition: 0.5s;
-            top: -100%;
+            top: -100vh;
             left: 0;
             display: flex;
             flex-direction: column;
@@ -76,7 +76,7 @@ header {
                     width: 100%;
                     padding: 10px;
                     color: black;
-                    font-weight: bold;
+                    font-weight: bold !important;
                     font-size: 20px;
                     display: flex;
                 }
