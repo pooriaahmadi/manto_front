@@ -20,11 +20,10 @@ const Home = () => {
         </div>
       </div>
       <div className="annoying">
-        <p>Want to manage you team? Start today!</p>
+        <p>Want to manage your team? Start today!</p>
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
       </div>
-      
     </div>
   );
 };

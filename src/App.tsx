@@ -14,7 +14,7 @@ import MatchView from "./Pages/MatchView";
 function App() {
   const [update, setUpdate] = useState<boolean>(false);
   const [user, setUser] = useState<User>(
-    new User({ endpoint: "http://localhost:3001" })
+    new User({ endpoint: "https://mantoapi.pooria.tech" })
   );
   useEffect(() => {
     const doStuff = async () => {
