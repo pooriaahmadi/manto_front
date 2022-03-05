@@ -72,10 +72,9 @@ const Property = ({ id, title, type, user, match_id }: PropertyInputs) => {
     e.preventDefault();
     await save(value);
   };
-  return (
-    <form onSubmit={handleSave} className="property">
-      <h1>{type === 3 ? title.split(",")[0] : title}</h1>
-      {type === 3 ? (
+  const returnInput = () => {
+    if (type === 3) {
+      return (
         <select onChange={handleSelectValueChange} value={value}>
           {title
             .split(",")
@@ -86,7 +85,18 @@ const Property = ({ id, title, type, user, match_id }: PropertyInputs) => {
               </option>
             ))}
         </select>
-      ) : (
+      );
+    } else if (type === 2) {
+      return (
+        <input
+          type={types[type]}
+          value={value}
+          checked={types[type] === "checkbox" ? strToBool(value) : false}
+          onChange={handleValueChange}
+        />
+      );
+    } else {
+      return (
         <input
           type={types[type]}
           value={value}
@@ -94,7 +104,13 @@ const Property = ({ id, title, type, user, match_id }: PropertyInputs) => {
           onChange={handleValueChange}
           pattern="\d*"
         />
-      )}
+      );
+    }
+  };
+  return (
+    <form onSubmit={handleSave} className="property">
+      <h1>{type === 3 ? title.split(",")[0] : title}</h1>
+      {returnInput()}
     </form>
   );
 };

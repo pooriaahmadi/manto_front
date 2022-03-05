@@ -144,12 +144,13 @@ export interface CategoryInputs {
 export enum PropertyTypes {
   boolean = 0,
   string = 1,
+
   number = 3,
 }
 export interface PropertyInputs {
   id: number;
   title: string;
-  type: PropertyTypes;
+  type: any;
   user: User;
   match_id: number;
 }
