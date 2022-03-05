@@ -1,10 +1,4 @@
-import {
-  ChangeEvent,
-  ChangeEventHandler,
-  FormEvent,
-  useEffect,
-  useState,
-} from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { PropertyInputs } from "../../types/interfaces";
 import "../../assets/scss/properties/property.scss";
 import "../../assets/scss/inputs/input.scss";
@@ -98,6 +92,7 @@ const Property = ({ id, title, type, user, match_id }: PropertyInputs) => {
           value={value}
           checked={types[type] === "checkbox" ? strToBool(value) : false}
           onChange={handleValueChange}
+          pattern="\d*"
         />
       )}
     </form>

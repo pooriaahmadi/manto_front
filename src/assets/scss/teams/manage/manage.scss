@@ -21,9 +21,18 @@
                 font-size: 45px;
             }
         }
-        h1 {
+        >h1 {
             font-weight: bolder !important;
             font-size: 35px;
+            margin-right: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #007AFF;
+            padding: 10px 15px;
+            font-weight: bolder;
+            border-radius: 5px;
         }
     }
     >.comments {

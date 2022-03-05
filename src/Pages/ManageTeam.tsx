@@ -6,7 +6,7 @@ import Team from "../Classes/Team";
 import { ManageTeamInputs } from "../types/interfaces";
 import Matches from "../Components/Teams/Matches";
 import NotFound from "./NotFound";
-
+import { Link } from "react-router-dom";
 const ManageTeam = ({ user }: ManageTeamInputs) => {
   const [team, setTeam] = useState<Team>();
   const [notFound, setNotFound] = useState<boolean>(false);
@@ -62,6 +62,7 @@ const ManageTeam = ({ user }: ManageTeamInputs) => {
           )}
         </div>
         <h1>{team.name}</h1>
+        {/* <Link to={`/teams/${team.id}/analytics`}>Analytics</Link> */}
       </div>
       <div className="comments">
         <CommentBox

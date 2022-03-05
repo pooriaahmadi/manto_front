@@ -162,3 +162,6 @@ export interface AnswerInputs {
   type: PropertyTypes;
   answer: any;
 }
+export interface AnalyticsInputs {
+  user: User;
+}

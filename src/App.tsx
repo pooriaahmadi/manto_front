@@ -11,6 +11,7 @@ import NewComment from "./Components/Comment/NewTeamComment";
 import Teams from "./Pages/Teams";
 import TeamComment from "./Pages/TeamComment";
 import MatchView from "./Pages/MatchView";
+import Analytics from "./Pages/Analytics";
 function App() {
   const [update, setUpdate] = useState<boolean>(false);
   const [user, setUser] = useState<User>(
@@ -70,6 +71,10 @@ function App() {
           element={<TeamComment user={user} />}
         />
         <Route path="/matches/:id" element={<MatchView user={user} />} />
+        <Route
+          path="/teams/:id/analytics"
+          element={<Analytics user={user} />}
+        />
       </Routes>
     </BrowserRouter>
   );
